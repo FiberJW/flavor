@@ -1,8 +1,13 @@
 import shell from 'shelljs'
+import { keys } from './keys'
 
-const input = shell.cat('./main.js')
-const keys = shell.cat('./keys.js')
+const rawInput = shell.cat('./main.js')
+const translate = (keys, input) => {
+  keys.map(key => {
+    input = input.replace(key.alias, key.translation)
+  })
+  return input
+}
 
-const token = input.split(" ")
-console.log(keys)
-console.log(token)
+const input = translate(keys, rawInput)
+console.log('the final input is', input)
