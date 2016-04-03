@@ -11,3 +11,5 @@ const translate = (keys, input) => {
 
 const input = translate(keys, rawInput)
 console.log('the final input is', input)
+shell.touch('./dist/main.js')
+shell.sed('-i', '', input, './dist/main.js')

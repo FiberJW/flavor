@@ -18,3 +18,5 @@ var translate = function translate(keys, input) {
 
 var input = translate(_keys.keys, rawInput);
 console.log('the final input is', input);
+_shelljs2.default.touch('./dist/main.js');
+_shelljs2.default.sed('-i', '', input, './dist/main.js');
