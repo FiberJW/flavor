@@ -1,2 +1,6 @@
-yar arr = [1,2,3]
-log('this is a log!', arr)
+function doIt() {
+  log('starting')
+  log('ender')
+}
+
+doIt()
