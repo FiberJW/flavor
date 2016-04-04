@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 import shell from 'shelljs'
 import fs from 'fs'
