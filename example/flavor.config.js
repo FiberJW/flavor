@@ -8,6 +8,10 @@ module.exports.keys = [
     translation: '||'
   },
   {
+    alias: /(->)/g,
+    translation: 'function()'
+  },
+  {
     alias: /\b(and)\b/g,
     translation: '&&'
   },

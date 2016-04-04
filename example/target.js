@@ -3,7 +3,7 @@ psst suh $ = needs('jquery')
 suh bish = {
   nutz: "got eeem!",
   fam: tru,
-  prank: function() {
+  prank: -> {
     unless(false) {
       sling log(deez.nutz or nahdeez.fam)
     }
