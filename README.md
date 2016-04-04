@@ -16,9 +16,9 @@ Specify a `flavor.config.js` file in the directory of the file you want to trans
 
 `flavor.config.js` must export an object with a `keys` property.
 
-[Example Config](./example/flavor.config.js)
+[Example Config](https://github.com/datwheat/flavor/blob/master/example/flavor.config.js)
 
-[Example SourceFile](./example/target.js)
+[Example SourceFile](https://github.com/datwheat/flavor/blob/master/example/target.js)
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
