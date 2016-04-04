@@ -19,8 +19,8 @@ var _mkdirp2 = _interopRequireDefault(_mkdirp);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var argz = process.argv.slice(2);
-var inputPath = _path2.default.resolve(argz[0]);
+var argz = process.argv.slice(2); // the specified args to the bin call
+var inputPath = _path2.default.resolve(argz[0]); // including file name
 var config = _path2.default.parse(inputPath).dir + '/flavor.config.js';
 
 _fs2.default.openSync(argz[0], 'r'); // check if inputfile exists
@@ -32,7 +32,7 @@ if (argz.length !== 2) {
 
 _fs2.default.openSync(config, 'r'); // Check for config
 
-var rawInput = _shelljs2.default.cat(inputPath);
+var rawInput = _shelljs2.default.cat(inputPath); // store plain text from input
 
 var _require = require(config);
 
@@ -48,9 +48,10 @@ var translate = function translate(keys, input) {
   return input;
 };
 
-var output = translate(keys, rawInput);
+var output = translate(keys, rawInput); // the transformed output
 
 (0, _mkdirp2.default)(outputDir, function (err) {
+  // Creates specified outputDir if it doesn't exist
   if (err) console.error(err);
 });
 
