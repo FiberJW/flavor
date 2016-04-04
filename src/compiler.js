@@ -6,21 +6,19 @@ import path from 'path'
 import mkdirp from 'mkdirp'
 
 const argz = process.argv.slice(2)
+const inputPath = path.resolve(argz[0])
+const config = path.parse(inputPath).dir + '/flavor.config.js'
 
-fs.openSync(argz[0], 'r', (err) => {
-  if (err) throw new Error('File isn\'t available to translate!')
-  else console.log('Translating...');
-});
+fs.openSync(argz[0], 'r'); // check if inputfile exists
 
-if (argz.length !== 2) {
+if (argz.length !== 2) { // check if an output path is specified
   throw new Error('Must specify <inputfile> and <outputfile> in that order.')
 }
 
-const inputPath = path.resolve(argz[0])
-
+fs.openSync(config, 'r'); // Check for config
 
 const rawInput = shell.cat(inputPath)
-const { keys } = require(path.parse(inputPath).dir + '/flavor.config.js')
+const { keys } = require(config)
 const outputFile = path.resolve(argz[1])
 const outputDir = path.parse(outputFile).dir
 

@@ -20,20 +20,21 @@ var _mkdirp2 = _interopRequireDefault(_mkdirp);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var argz = process.argv.slice(2);
+var inputPath = _path2.default.resolve(argz[0]);
+var config = _path2.default.parse(inputPath).dir + '/flavor.config.js';
 
-_fs2.default.openSync(argz[0], 'r', function (err) {
-  if (err) throw new Error('File isn\'t available to translate!');else console.log('Translating...');
-});
+_fs2.default.openSync(argz[0], 'r'); // check if inputfile exists
 
 if (argz.length !== 2) {
+  // check if an output path is specified
   throw new Error('Must specify <inputfile> and <outputfile> in that order.');
 }
 
-var inputPath = _path2.default.resolve(argz[0]);
+_fs2.default.openSync(config, 'r'); // Check for config
 
 var rawInput = _shelljs2.default.cat(inputPath);
 
-var _require = require(_path2.default.parse(inputPath).dir + '/flavor.config.js');
+var _require = require(config);
 
 var keys = _require.keys;
 
