@@ -47,5 +47,5 @@ _fs2.default.writeFile(outputFile, output, 'utf8', function (err) {
   if (err) {
     console.error(err);
   }
-  console.log('It\'s been real');
+  console.log(argz[0] + ' successfully compiled to ' + argz[1]);
 });
