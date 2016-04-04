@@ -2,22 +2,25 @@
   "name": "flavor",
   "version": "0.0.4",
   "description": "Add some flavor",
-  "main": "main.js",
   "scripts": {
     "build": "babel src -d dist",
-    "dev": "nodemon --exec \"npm start --silent\" --watch src",
     "prebuild": "rimraf dist",
-    "prestart": "npm run build --silent",
-    "start": "node dist/compiler.js",
     "compile": "node dist/compiler.js"
   },
-  "author": "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
+  "bin": {
+    "flavor": "dist/compiler.js"
+  },
+  "preferGlobal": true,
+  "author": "Juwan Wheatley <datwheat@gmail.com> (datwheat.github.io)",
   "license": "MIT",
   "dependencies": {
     "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-1": "^6.5.0",
+    "fs": "0.0.2",
+    "mkdirp": "^0.5.1",
+    "path": "^0.12.7",
     "rimraf": "^2.5.2",
     "shelljs": "^0.6.0"
   }
