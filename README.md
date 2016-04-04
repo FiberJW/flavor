@@ -6,19 +6,48 @@
   A really naive way to flavor your JavaScript.
 </p>
 
-`npm install -g flavor`
+# Getting Started
+Currently, it takes 3 different files to flavor your code, a **source** file, an **output** file, and a **flavor.config.js** file.
+```
+$ touch source.js output.js flavor.config.js
+```
 
-`suh <sourcefile.js> <outputfile.js>`
+In the `flavor.config.js` file you need to export an array named "keys", and fill it with alias objects:
+```js
+module.export.keys = [
+  {
+    alias: /\b(aint)\b/g,
+    translation: '!=='
+  }
+]
+```
 
-## Write JS How You Want
+These keys will provide flavor with a way to find and replace your aliases with proper code.
 
-Specify a `flavor.config.js` file in the directory of the file you want to transform.
+Then in your source file write some weird code:
+```js
+'This string' aint false
+```
 
-`flavor.config.js` must export an object with a `keys` property.
+Run the flavor command:
+```
+$ flavor source.js output.js
+```
 
+And your `output.js` file should give you real JavaScript.
+``` js
+'This string' !== false
+```
+
+## Check out the example for more details
 [Example Config](https://github.com/datwheat/flavor/blob/master/example/flavor.config.js)
 
 [Example SourceFile](https://github.com/datwheat/flavor/blob/master/example/target.js)
+
+# Note
+This is just an experimental project on syntax translation, and is subject to change drastically. Please do not ship this to production.
+
+Please join in on the fun with ideas of your own with a PR or Issue!
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/gluten-free.svg)](http://forthebadge.com)
