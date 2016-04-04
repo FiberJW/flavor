@@ -1,6 +1,6 @@
 {
   "name": "flavor",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Add some flavor",
   "scripts": {
     "build": "babel src -d dist",
