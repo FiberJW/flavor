@@ -40,6 +40,10 @@ module.exports.keys = [
     translation: '&&'
   },
   {
+    alias: /\b(def)\b/g,
+    translation: 'function'
+  },
+  {
     alias: /\b(unless\s?\()/g,
     translation: 'if (!'
   },
