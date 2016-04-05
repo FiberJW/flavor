@@ -11,6 +11,7 @@
     "flavor": "dist/compiler.js"
   },
   "preferGlobal": true,
+  "homepage": "https://github.com/datwheat/flavor",
   "author": "Juwan Wheatley <datwheat@gmail.com> (datwheat.github.io)",
   "license": "MIT",
   "dependencies": {
