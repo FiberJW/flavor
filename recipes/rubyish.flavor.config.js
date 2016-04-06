@@ -4,7 +4,7 @@
  * unless (true) do
  *   return;
  * end
- * elif (true) do
+ * elsif (true) do
  *   print(true or false == true)
  * end
  *
@@ -24,7 +24,7 @@ module.exports.keys = [
     translation: 'console.log('
   },
   {
-    alias: /\b(elif\s?\()/g,
+    alias: /\b(elsif\s?\()/g,
     translation: 'else if ('
   },
   {
